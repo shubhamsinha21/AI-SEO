@@ -1,12 +1,50 @@
+"use client";
+
 import Button from "@/components/Button";
 import starBg from "@/assets/stars.png";
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "framer-motion";
+import { useRef } from "react";
 
 export default function Hero() {
+  const sectionRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  // useMotionValueEvent(scrollYProgress, "change", (value) => {
+  //   console.log("scrollYProgress", value);
+  // });
+
+  const backgroundPositionY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [-300, 300]
+  );
+
   return (
-    <section
+    <motion.section
+      ref={sectionRef}
+      animate={{
+        backgroundPositionX: starBg.width,
+      }}
+      transition={{
+        repeat: Infinity,
+        duration: 1.6,
+        ease: "linear",
+      }}
       className="h-[492px]  md:h-[700px] flex items-center overflow-hidden relative 
       [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]"
-      style={{ backgroundImage: `url(${starBg.src})` }}
+      style={{
+        backgroundImage: `url(${starBg.src})`,
+        backgroundPositionY,
+      }}
     >
       {/* overlay */}
       <div
@@ -23,7 +61,15 @@ bg-[radial-gradient(75%_75%_at_center_center,rgb(140,69,255,0.5)_15%,rgb(14,0,36
       ></div>
 
       {/* 1st rings  */}
-      <div
+
+      <motion.div
+        style={{ translateY: "-50%", translateX: "-50%" }}
+        animate={{ rotate: "1turn " }}
+        transition={{
+          duration: 60,
+          repeat: Infinity,
+          ease: "linear",
+        }}
         className="absolute h-[344px] w-[344px] md:w-[580px] md:h-[580px] border border-white 
         rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20"
       >
@@ -41,16 +87,22 @@ bg-[radial-gradient(75%_75%_at_center_center,rgb(140,69,255,0.5)_15%,rgb(14,0,36
         >
           <div className="h-2 w-2 bg-white rounded-full"></div>
         </div>
-      </div>
+      </motion.div>
 
       {/* 2nd ring */}
-      <div
+      <motion.div
+        style={{ translateY: "-50%", translateX: "-50%" }}
+        animate={{ rotate: "-1turn" }}
+        transition={{ repeat: Infinity, duration: 60, ease: "linear" }}
         className="absolute h-[444px] w-[444px] md:w-[780px] md:h-[780px] rounded-full border border-white/20
       top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-dashed"
-      ></div>
+      ></motion.div>
 
       {/* 3rd ring */}
-      <div
+      <motion.div
+        style={{ translateY: "-50%", translateX: "-50%" }}
+        animate={{ rotate: "1turn" }}
+        transition={{ repeat: Infinity, duration: 90, ease: "linear" }}
         className="absolute w-[544px] h-[544px] md:w-[980px] md:h-[980px] rounded-full border border-white top-1/2
       left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20"
       >
@@ -62,7 +114,7 @@ bg-[radial-gradient(75%_75%_at_center_center,rgb(140,69,255,0.5)_15%,rgb(14,0,36
           className="absolute h-2 w-2 left-full bg-white rounded-full top-1/2
         -translate-x-1/2 -translate-y-1/2"
         ></div>
-      </div>
+      </motion.div>
 
       {/* container */}
       <div className="container relative mt-16">
@@ -84,6 +136,6 @@ bg-[radial-gradient(75%_75%_at_center_center,rgb(140,69,255,0.5)_15%,rgb(14,0,36
           <Button>Join waitlist</Button>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
