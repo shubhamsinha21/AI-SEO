@@ -1,25 +1,34 @@
-#Our AI-powered SEO tool revolutionizes the way businesses optimize their online presence. It automates keyword analysis, content creation, and link-building strategies, ensuring higher search engine rankings.
+# Stunning AI SaaS Startup Landing Page
 
-## Let's Star
+## Overview
+Our AI-powered SEO tool revolutionizes the way businesses optimize their online presence. It automates keyword analysis, content creation, and link-building strategies, ensuring higher search engine rankings.
 
-First,clone the repository and run the development server:
+## Features
+- Stunning animations and transitions
+- Advanced mask effects
+- Fully responsive on mobile, tablet, and desktop
+- moving planets and infinite rotating stars
+- parallax effect in the background
+- dynamic testimonials
 
-```bash
-npm run dev
-```
+## Tech Stack
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Here are the technologies used in this project:
 
-## Know More
+- ![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=white)
+- ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=next.js&logoColor=white)
+- ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white)
+- ![Tailwind Merge](https://img.shields.io/badge/tailwind--merge-4B5563?style=flat&logoColor=white)
+- ![SVGR](https://img.shields.io/badge/SVGR-1E293B?style=flat&logo=svg&logoColor=white)
+- ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)
+- ![Framer Motion](https://img.shields.io/badge/Framer%20Motion-0082FC?style=flat&logo=framer&logoColor=white)
+- ![DotLottie](https://img.shields.io/badge/DotLottie-000000?style=flat&logo=lottie&logoColor=white)
+- ![LottieFiles](https://img.shields.io/badge/LottieFiles-00A8E1?style=flat&logo=lottiefiles&logoColor=white)
+- ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat&logo=vercel&logoColor=white)
+- ![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?style=flat&logo=visualstudiocode&logoColor=white)
 
-###Tech Stack Used-
-![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=white)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=next.js&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat&logo=tailwind-css&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat&logo=vercel&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6
-## Deploy on Vercel
+### Demo-
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+https://github.com/user-attachments/assets/9c19aaaf-58be-438a-a878-147022000d3d
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
