@@ -7,6 +7,7 @@ import quantumLogo from "@/assets/logo-celestial.png";
 import pulseLogo from "@/assets/logo-pulse.png";
 import echoLogo from "@/assets/logo-echo.png";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function LogoTicker() {
   return (
@@ -49,8 +50,15 @@ export default function LogoTicker() {
                 celestialLogo,
                 echoLogo,
                 quantumLogo,
-              ].map((logo) => (
-                <img src={logo.src} alt={logo.src} className="h-6 2-auto" />
+              ].map((logo, index) => (
+                <Image
+                  src={logo.src}
+                  alt={logo.src}
+                  key={index}
+                  width={100}
+                  height={24}
+                  className="h-6 w-auto"
+                />
               ))}
             </motion.div>
           </div>
