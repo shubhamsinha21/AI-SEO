@@ -1,9 +1,11 @@
+"use client";
+
 import avatar1 from "@/assets/avatar-1.png";
 import avatar2 from "@/assets/avatar-2.png";
 import avatar3 from "@/assets/avatar-3.png";
 import avatar4 from "@/assets/avatar-4.png";
 import Image from "next/image";
-import test from "node:test";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
@@ -37,12 +39,25 @@ export default function Testimonial() {
         </p>
 
         <div
-          className="overflow-hidden mt-10 
+          className=" flex overflow-hidden mt-10 
         [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]"
         >
           {/* testimonial */}
-          <div className="flex gap-5">
-            {testimonials.map((testimonial) => (
+          <motion.div
+            initial={{
+              translateX: "-50%",
+            }}
+            animate={{
+              translateX: "0",
+            }}
+            transition={{
+              ease: "linear",
+              duration: 20,
+              repeat: Infinity,
+            }}
+            className="flex gap-5 flex-none pr-5 "
+          >
+            {[...testimonials, ...testimonials].map((testimonial) => (
               <div
                 key={testimonial.name}
                 className="border border-white/15 p-6 md:p-10 rounded-xl 
@@ -76,7 +91,7 @@ export default function Testimonial() {
                 </div>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
