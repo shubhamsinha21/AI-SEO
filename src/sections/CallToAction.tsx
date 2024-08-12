@@ -30,7 +30,7 @@ const useRelativeMousePosition = (to: RefObject<HTMLElement>) => {
     return () => {
       window.removeEventListener("mousemove", updateMousePosition);
     };
-  }, [updateMousePosition]);
+  }, []);
 
   return [mouseX, mouseY];
 };
@@ -59,7 +59,7 @@ export default function CallToAction() {
       <div className="container">
         <motion.div
           ref={borderedDivRef}
-          className="border border-white/15 py-24 rounded-xl overflow-hidden relative group"
+          className="relative group border border-white/15 py-24 rounded-xl overflow-hidden"
           animate={{
             backgroundPositionX: "0%",
           }}
@@ -75,10 +75,13 @@ export default function CallToAction() {
         >
           <div
             className="absolute inset-0 bg-[rgb(74,32,138)] bg-blend-overlay
-            [mask-image:radial-gradient(circle at 50% 35%, black, transparent)]
             group-hover:opacity-0 transition duration-700"
             style={{
               backgroundImage: `url(${gridLines.src})`,
+              maskImage:
+                "radial-gradient(circle at 50% 35%, black, transparent)",
+              WebkitMaskImage:
+                "radial-gradient(circle at 50% 35%, black, transparent)", // for WebKit browsers
             }}
           ></div>
           <motion.div
@@ -86,10 +89,11 @@ export default function CallToAction() {
             group-hover:opacity-100 transition duration-700"
             style={{
               maskImage,
+              WebkitMaskImage: maskImage, // for WebKit browsers
               backgroundImage: `url(${gridLines.src})`,
             }}
           ></motion.div>
-          <div className="relative">
+          <div className="relative z-10">
             <h2 className="text-5xl md:text-6xl max-w-sm mx-auto tracking-tighter text-center font-medium">
               AI-driven SEO for everyone
             </h2>
