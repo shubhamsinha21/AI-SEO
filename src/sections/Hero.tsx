@@ -123,6 +123,14 @@ export default function Hero() {
            font-semibold tracking-tighter bg-white bg-clip-text text-transparent
          bg-[radial-gradient(100%_100%_at_top_left,_white,_white,_rgb(74,32,138,0.5))]
         text-center"
+          style={
+            {
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              MozBackgroundClip: "text",
+              MozTextFillColor: "transparent",
+            } as React.CSSProperties
+          }
         >
           AI SEO
         </h1>
