@@ -19,7 +19,7 @@ const useRelativeMousePosition = (to: RefObject<HTMLElement>) => {
   // updating mouse position
   const updateMousePosition = (event: MouseEvent) => {
     if (!to.current) return;
-    const { top, left } = to.current?.getBoundingClientRect();
+    const { top, left } = to.current.getBoundingClientRect();
     mouseX.set(event.clientX - left);
     mouseY.set(event.clientY - top);
   };
@@ -61,15 +61,16 @@ export default function CallToAction() {
           ref={borderedDivRef}
           className="relative group border border-white/15 py-24 rounded-xl overflow-hidden"
           animate={{
-            backgroundPositionX: "0%",
+            backgroundPositionX: ["0%", "100%"],
           }}
           transition={{
             repeat: Infinity,
-            duration: 1.6,
+            duration: 1, // Adjust the duration to control the speed of the background movement
             ease: "linear",
           }}
           style={{
             backgroundImage: `url(${starBg.src})`,
+            backgroundPositionX: "0%",
             backgroundPositionY,
           }}
         >
