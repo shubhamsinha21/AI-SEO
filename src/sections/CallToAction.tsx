@@ -55,7 +55,7 @@ export default function CallToAction() {
   const maskImage = useMotionTemplate`radial-gradient(50% 50% at ${mouseX}px ${mouseY}px, black, transparent)`;
 
   return (
-    <section className="py-20 md:py-24" ref={sectionRef}>
+    <section className="py-20 md:py-24" ref={sectionRef} id="callToAction">
       <div className="container">
         <motion.div
           ref={borderedDivRef}

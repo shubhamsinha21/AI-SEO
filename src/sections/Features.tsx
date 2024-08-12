@@ -39,7 +39,7 @@ export default function Features() {
   };
 
   return (
-    <section className="py-20 md:py-24">
+    <section className="py-20 md:py-24" id="features">
       <div className="container">
         <h2 className="text-5xl md:text-6xl font-medium text-center tracking-tighter">
           Elevate your SEO efforts.

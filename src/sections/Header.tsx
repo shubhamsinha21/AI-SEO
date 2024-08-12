@@ -8,7 +8,7 @@ export default function Header() {
       className="py-4 border-b border-white/15 md:border-none sticky 
     top-0 z-10"
     >
-      {/*  overlay*/}
+      {/* overlay */}
       <div className="absolute inset-0 backdrop-blur -z-10 md:hidden"></div>
       {/* container */}
       <div className="container">
@@ -22,23 +22,34 @@ export default function Header() {
             className="border h-10 w-10 rounded-lg flex justify-center
            items-center border-white/15"
           >
-            <LogoIcon className="h-8 w-8" />
+            <a href="#">
+              <LogoIcon className="h-8 w-8" />
+            </a>
           </div>
 
           {/* nav */}
           <div className="hidden md:block">
             <nav className="flex gap-8 text-sm">
               <a href="#" className="text-white/70 hover:text-white transition">
+                Home
+              </a>
+              <a
+                href="#callToAction"
+                className="text-white/70 hover:text-white transition"
+              >
+                About
+              </a>
+              <a
+                href="#features"
+                className="text-white/70 hover:text-white transition"
+              >
                 Features
               </a>
-              <a href="#" className="text-white/70 hover:text-white transition">
-                Developers
-              </a>
-              <a href="#" className="text-white/70 hover:text-white transition">
-                Pricing
-              </a>
-              <a href="#" className="text-white/70 hover:text-white transition">
-                ChangeLog
+              <a
+                href="#testimonials"
+                className="text-white/70 hover:text-white transition"
+              >
+                Testimonials
               </a>
             </nav>
           </div>

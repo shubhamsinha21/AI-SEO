@@ -11,7 +11,7 @@ import {
 import { useRef } from "react";
 
 export default function Hero() {
-  const sectionRef = useRef(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -49,7 +49,7 @@ export default function Hero() {
       {/* overlay */}
       <div
         className="absolute inset-0 
-bg-[radial-gradient(75%_75%_at_center_center,rgb(140,69,255,0.5)_15%,rgb(14,0,36,0.5)_78%,transparent)]"
+      bg-[radial-gradient(75%_75%_at_center_center,rgb(140,69,255,0.5)_15%,rgb(14,0,36,0.5)_78%,transparent)]"
       ></div>
 
       {/* planet */}
@@ -119,17 +119,18 @@ bg-[radial-gradient(75%_75%_at_center_center,rgb(140,69,255,0.5)_15%,rgb(14,0,36
       {/* container */}
       <div className="container relative mt-16">
         <h1
-          className="text-8xl md:text-[168px] md:leading-none
+          className="text-7xl md:text-[148px] md:leading-none
            font-semibold tracking-tighter bg-white bg-clip-text text-transparent
          bg-[radial-gradient(100%_100%_at_top_left,_white,_white,_rgb(74,32,138,0.5))]
         text-center"
         >
           AI SEO
         </h1>
-        <p className="text-lg md:text-xl text-white/70 mt-5 text-center max-w-xl mx-auto">
-          AI SaaS (Software as a Service) refers to cloud-based applications
-          that utilize artificial intelligence to provide services such as data
-          analysis, automation, and machine learning.
+        <p className="text-md md:text-xl text-white/70 mt-5 text-center max-w-2xl mx-auto">
+          Our AI-powered SEO tool revolutionizes the way businesses optimize
+          their online presence. It automates keyword analysis, content
+          creation, and link-building strategies, ensuring higher search engine
+          rankings.
         </p>
 
         <div className="flex justify-center mt-5">

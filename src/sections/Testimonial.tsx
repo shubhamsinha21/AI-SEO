@@ -1,35 +1,12 @@
 "use client";
 
-import avatar1 from "@/assets/avatar-1.png";
-import avatar2 from "@/assets/avatar-2.png";
-import avatar3 from "@/assets/avatar-3.png";
-import avatar4 from "@/assets/avatar-4.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
-
-const testimonials = [
-  {
-    text: "This product has completely transformed how I manage my projects and deadlines.",
-    name: "Sophia Perez",
-    title: "Director @ Quantum",
-    avatarImg: avatar1,
-  },
-  {
-    text: "This AI tools have completely enhanced our SEO entire strategy overnight",
-    title: "Founder @ Pulse",
-    avatarImg: avatar2,
-  },
-  {
-    text: "Our team's productivity has increased significantly since we started using this tool.",
-    name: "Alec Whitton",
-    title: "CTO @ Tech Solutions",
-    avatarImg: avatar3,
-  },
-];
+import { testimonials } from "@/data";
 
 export default function Testimonial() {
   return (
-    <section className="py-20 md:py-24">
+    <section className="py-20 md:py-24" id="testimonials">
       <div className="container">
         <h2 className="text-5xl md:text-6xl text-center tracking-tighter font-medium">
           Beyond Expectations
