@@ -20,12 +20,12 @@ const useRelativeMousePosition = (to: RefObject<HTMLElement>) => {
   const updateMousePosition = (event: MouseEvent) => {
     if (!to.current) return;
     const { top, left } = to.current?.getBoundingClientRect();
-    mouseX.set(event.x - left);
-    mouseY.set(event.y - top);
+    mouseX.set(event.clientX - left);
+    mouseY.set(event.clientY - top);
   };
 
   useEffect(() => {
-    window.addEventListener("mouseover", updateMousePosition);
+    window.addEventListener("mousemove", updateMousePosition);
 
     return () => {
       window.removeEventListener("mousemove", updateMousePosition);
@@ -52,17 +52,16 @@ export default function CallToAction() {
 
   const [mouseX, mouseY] = useRelativeMousePosition(borderedDivRef);
 
-  const maskImage = useMotionTemplate`radial-gradient(50% 50% at ${mouseX}px ${mouseY}px, black, transparent)`;
+  const maskImage = useMotionTemplate`radial-gradient(circle at ${mouseX}px ${mouseY}px, rgba(0,0,0,0.5), transparent)`;
 
   return (
     <section className="py-20 md:py-24" ref={sectionRef} id="callToAction">
       <div className="container">
         <motion.div
           ref={borderedDivRef}
-          className="border border-white/15 py-24 rounded-xl
-           overflow-hidden relative group"
+          className="border border-white/15 py-24 rounded-xl overflow-hidden relative group"
           animate={{
-            backgroundPositionX: starBg.width,
+            backgroundPositionX: "0%",
           }}
           transition={{
             repeat: Infinity,
@@ -76,7 +75,7 @@ export default function CallToAction() {
         >
           <div
             className="absolute inset-0 bg-[rgb(74,32,138)] bg-blend-overlay
-            [mask-image:radial-gradient(50%_50%_at_50%_35%,black,transparent)]
+            [mask-image:radial-gradient(circle at 50% 35%, black, transparent)]
             group-hover:opacity-0 transition duration-700"
             style={{
               backgroundImage: `url(${gridLines.src})`,
